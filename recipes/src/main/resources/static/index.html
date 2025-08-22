@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Recipes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header>
+  <h1>Recipes</h1>
+  <div class="controls">
+    <label>Page Size:
+      <select id="pageSize">
+        <option>15</option>
+        <option selected>20</option>
+        <option>30</option>
+        <option>50</option>
+      </select>
+    </label>
+    <button id="resetFilters">Reset Filters</button>
+  </div>
+</header>
+
+<main>
+  <div class="table-wrap">
+    <table id="recipesTable">
+      <thead>
+        <tr>
+          <th style="width:40%">Title
+            <input id="titleFilter" placeholder="Filter by title…"/>
+          </th>
+          <th style="width:15%">Cuisine
+            <input id="cuisineFilter" placeholder="Filter by cuisine…"/>
+          </th>
+          <th style="width:15%">Rating
+            <input id="ratingFilter" placeholder="e.g. >=4.5"/>
+          </th>
+          <th style="width:15%">Total Time
+            <input id="totalTimeFilter" placeholder="e.g. <=120"/>
+          </th>
+          <th style="width:15%">Serves
+            <input id="servesFilter" placeholder="(client-side)"/>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="recipesBody">
+      </tbody>
+    </table>
+
+    <div id="noResults" class="empty hidden">No results found. Try adjusting filters.</div>
+    <div id="noData" class="empty hidden">No data available.</div>
+
+    <div class="pager">
+      <button id="prevBtn">&larr; Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextBtn">Next &rarr;</button>
+    </div>
+  </div>
+
+  <aside id="drawer" class="drawer">
+    <div class="drawer-header">
+      <div>
+        <h2 id="drawerTitle"></h2>
+        <div id="drawerCuisine" class="sub"></div>
+      </div>
+      <button id="closeDrawer">&times;</button>
+    </div>
+    <div class="drawer-content">
+      <div class="kv">
+        <div class="k">Description</div>
+        <div id="drawerDesc" class="v"></div>
+      </div>
+
+      <div class="kv">
+        <div class="k">Total Time</div>
+        <div class="v">
+          <span id="totalTimeText"></span>
+          <button id="expandTimes" class="link">details</button>
+          <div id="timesDetails" class="hidden small">
+            <div>Prep Time: <span id="prepTimeText"></span> mins</div>
+            <div>Cook Time: <span id="cookTimeText"></span> mins</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Nutrition</h3>
+      <table class="nutr">
+        <tbody id="nutrBody"></tbody>
+      </table>
+    </div>
+  </aside>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
