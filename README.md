@@ -12,9 +12,9 @@ A Spring Boot application for managing and searching recipes with a MySQL databa
 
 ## Prerequisites
 
-- Java 21+
-- MySQL 8.0+
-- Maven 3.6+
+- Java 21
+- MySQL 9.2
+- Maven 3.9.9
 
 ## Database Setup
 
